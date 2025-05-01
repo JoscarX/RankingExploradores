@@ -1,0 +1,206 @@
+<!-- <header>
+  <div class="container-header">
+    <img src="LogoCampamento.png" alt="Logo Guerrero Siervo" class="logo-izquierdo">
+    <div class="centro-header">
+      <h1 class="titulo-ranking">Ranking Campamento Guerrero Siervo 2025</h1>
+      <nav>
+        <a routerLink="/" routerLinkActive="router-link-active">Inicio</a>
+        <a routerLink="competencias">Competencias</a>
+        <a (click)="opendialogSesion()">Sesion</a>
+
+      </nav>
+    </div>
+    <img src="Logo Region Central.png" alt="Logo Región Central" class="logo-derecho">
+  </div>
+</header> -->
+
+
+
+<!-- <header>
+  <div class="container-header">
+    <img src="LogoCampamento.png" alt="Logo Guerrero Siervo" class="logo-izquierdo">
+    <div class="centro-header">
+      <h1 class="titulo-ranking">Ranking Campamento Guerrero Siervo 2025</h1>
+      <nav>
+        <a routerLink="/" routerLinkActive="router-link-active">Inicio</a>
+        <a routerLink="competencias">Competencias</a>
+        <a (click)="opendialogSesion()">Sesion</a>
+
+      </nav>
+    </div>
+    <img src="Logo Region Central.png" alt="Logo Región Central" class="logo-derecho">
+  </div>
+</header> -->
+
+<header>
+  <div class="left">
+    <div class="menu-container">
+      <div class="menu" #menu (click)="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="brand">
+      <img src="Logo Region Central.png" class="logo" />
+      <span class="name">SINERGY CHAMPION RANKING</span>
+    </div>
+  </div>
+  <div class="right">
+    <!-- <a href="#" class="icons-header">
+      <img src="icons-sidebar-navbar-main/icons/chat.svg" alt="chat" />
+    </a>
+    <a href="#" class="icons-header">
+      <img src="icons-sidebar-navbar-main/icons/question.svg" alt="question" />
+    </a>
+    <a href="#" class="icons-header">
+      <img src="icons-sidebar-navbar-main/icons/notification.svg" alt="notification" />
+    </a> -->
+    <img src="iconos-siderbar-nav/account.png" alt="img-use" class="user" (click)="opendialogSesion()"/>
+  </div>
+</header>
+
+<div class="siderbar" #sidebar>
+  <nav>
+    <!-- contenido del menú -->
+    <ul>
+      <li>
+          <a href="#" class="search">
+              <img src="iconos-siderbar-nav/search.svg" alt="">
+              <span>Buscar</span>
+          </a>
+      </li>
+      <li>
+          <a  routerLink="/" routerLinkActive="router-link-active"  routerLinkActive="selected"  [routerLinkActiveOptions]="{ exact: true }">
+              <img src="Iconos-nav/hogar.png" alt="">
+              <span>Pagina de Inicio</span>
+          </a>
+      </li>
+      <li>
+          <a routerLink="competencias" routerLinkActive="router-link-active"  routerLinkActive="selected">
+              <img src="Iconos-nav/competencia.png" alt="">
+              <span>Competencias</span>
+          </a>
+      </li>
+      
+
+        <li *ngIf="usuarioRol === 'admin' || usuarioRol === 'staff'">
+            <a routerLink="destacamento-admin" routerLinkActive="router-link-active"  routerLinkActive="selected">
+                <img src="Iconos-nav/destacamentos-admin.png" alt="">
+                <span>Gestion destacamentos</span>
+            </a>
+        </li>
+        <li *ngIf="usuarioRol === 'admin' || usuarioRol === 'staff'">
+            <a routerLink="competencia-admin" routerLinkActive="router-link-active"  routerLinkActive="selected">
+                <img src="Iconos-nav/competencia-admin.png" alt="">
+                <span>Gestion competencia</span>
+            </a>
+        </li>
+      
+      <!-- <li>
+          <a href="#">
+              <img src="iconos-siderbar-nav/wallet.svg" alt="">
+              <span>Billetera</span>
+          </a>
+      </li>
+      <li>
+          <a href="#">
+              <img src="iconos-siderbar-nav/chart.svg" alt="">
+              <span>Informes</span>
+          </a>
+      </li>
+      <li>
+          <a href="#">
+              <img src="iconos-siderbar-nav/tools.svg" alt="">
+              <span>Heramientas</span>
+          </a>
+      </li>-->
+  </ul> 
+    <!-- contenido del menú -->
+  </nav>
+</div>
+
+<!-- 
+<header>
+  <div class="left">
+      <div class="menu-container">
+          <div class="menu" id="menu">
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+      </div>
+      <div class="brand">
+          <img src="/icons-sidebar-navbar-main/icons/udemy.svg" class="logo">
+          <span class="name">apex</span>
+      </div>
+  </div>
+  <div class="right">
+      <a href="#" class="icons-header">
+          <img src="icons-sidebar-navbar-main/icons/chat.svg" alt="chat">
+      </a>
+      <a href="#" class="icons-header">
+          <img src="icons-sidebar-navbar-main/icons/question.svg" alt="question">
+      </a>
+      <a href="#" class="icons-header">
+          <img src="icons-sidebar-navbar-main/icons/notification.svg" alt="notification">
+      </a>
+      <img src="" alt="img-use" class="user">
+  </div>
+</header>
+<div class="siderbar" id="siderbar">
+  <nav>
+      <ul>
+          <li>
+              <a href="#" class="search">
+                  <img src="iconos-siderbar-nav/search.svg" alt="">
+                  <span>Buscar</span>
+              </a>
+          </li>
+          <li>
+              <a href="#" class="selected">
+                  <img src="iconos-siderbar-nav/home.svg" alt="">
+                  <span>Pagina de Inicio</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="iconos-siderbar-nav/file.svg" alt="">
+                  <span>Productos</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="iconos-siderbar-nav/megaphone.svg" alt="">
+                  <span>Marketing</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="iconos-siderbar-nav/money.svg" alt="">
+                  <span>Ventas</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="iconos-siderbar-nav/wallet.svg" alt="">
+                  <span>Billetera</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="iconos-siderbar-nav/chart.svg" alt="">
+                  <span>Informes</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="iconos-siderbar-nav/tools.svg" alt="">
+                  <span>Heramientas</span>
+              </a>
+          </li>
+      </ul>
+  </nav>
+</div>
+
+ -->

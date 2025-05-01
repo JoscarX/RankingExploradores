@@ -1,0 +1,174 @@
+<form [formGroup]="formSupervivencia">
+
+    <div class="container">
+        <h1>Hoja de Evaluación - Competencia "Guerrero Sobreviviente"</h1>
+
+        <div class="section">
+            <label>Nombres:</label>
+            <input type="text" [value]="participanteInfo.nombreCompleto"/>
+
+            <label>Evaluador:</label>
+            <input type="text" />
+        </div>
+
+        <div class="section">
+            <h3>1. Purificación de Agua (20 min)</h3>
+
+            <div class="subsection">
+                <label>Filtrado (Explicación teórica): <span class="pts">/5 pts</span></label>
+                <input type="number" max="5" min="0" formControlName="filtrado"/>
+            </div>
+
+            <div class="subsection">
+                <label>Purificación (Práctica): <span class="pts">/10 pts</span></label>
+                <input type="number" max="10" min="0" formControlName="purificacion"/>
+            </div>
+
+            <div class="subsection">
+                <label>Trabajo en equipo y presentación: <span class="pts">/5 pts</span></label>
+                <input type="number" max="5" min="0" formControlName="trabajoEquipo"/>
+            </div>
+
+            <div class="subsection">
+                <label>Puntaje Total: <span class="pts">/20 pts</span></label>
+                <input type="number" max="20" min="0" />
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>2. Construcción de Refugio (30 min)</h3>
+
+            <div class="subsection">
+                <label>Estructura del refugio: <span class="pts">/10 pts</span></label>
+                <input type="number" max="10" min="0" formControlName="estructuraRefugio"/>
+            </div>
+
+            <div class="subsection">
+                <label>Protección contra elementos (agua, viento): <span class="pts">/5 pts</span></label>
+                <input type="number" max="5" min="0" formControlName="proteccionElementos"/>
+            </div>
+
+            <div class="subsection">
+                <label>Seguridad y efectividad: <span class="pts">/5 pts</span></label>
+                <input type="number" max="5" min="0" formControlName="seguridadEfectividad"/>
+            </div>
+
+            <div class="subsection">
+                <label>Puntaje Total: <span class="pts">/20 pts</span></label>
+                <input type="number" max="20" min="0" />
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>3. Orientación Solar (15 min)</h3>
+
+            <div class="subsection">
+                <label>Ejecución correcta del método: <span class="pts">/8 pts</span></label>
+                <input type="number" max="8" min="0" formControlName="ejecucionMetodo"/>
+            </div>
+
+            <div class="subsection">
+                <label>Orientación precisa: <span class="pts">/5 pts</span></label>
+                <input type="number" max="5" min="0" formControlName="orientacionPrecisa"/>
+            </div>
+
+            <div class="subsection">
+                <label>Explicación sobre la variación según la hora del día: <span class="pts">/2 pts</span></label>
+                <input type="number" max="2" min="0" formControlName="explicacionVariacion"/>
+            </div>
+
+            <div class="subsection">
+                <label>Puntaje Total: <span class="pts">/15 pts</span></label>
+                <input type="number" max="15" min="0" />
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>4. ARMADO DE FOGATA (20 min)
+            </h3>
+
+            <div class="subsection">
+                <label>Éxito al encender el fuego: <span class="pts">/10 pts</span></label>
+                <input type="number" max="10" min="0" formControlName="encenderFuego"/>
+            </div>
+
+            <div class="subsection">
+                <label>Mantenerlo durante 10 minutos: <span class="pts">/5 pts</span></label>
+                <input type="number" max="5" min="0" formControlName="mantenerlo"/>
+            </div>
+
+            <div class="subsection">
+                <label>Seguridad y control del fuego: <span class="pts">/5 pts</span></label>
+                <input type="number" max="5" min="0" formControlName="seguridadFuego"/>
+            </div>
+
+            <div class="subsection">
+                <label>Puntaje Total: <span class="pts">/20 pts</span></label>
+                <input type="number" max="20" min="0" />
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>5. COCCIÓN DE ALIMENTO (25 min)
+            </h3>
+
+            <div class="subsection">
+                <label>Seguridad e higiene en el proceso: <span class="pts">/8 pts</span></label>
+                <input type="number" max="8" min="0" formControlName="seguridadHigiene"/>
+            </div>
+
+            <div class="subsection">
+                <label>Comida cocida adecuadamente: <span class="pts">/5 pts</span></label>
+                <input type="number" max="5" min="0" formControlName="comidaCocida"/>
+            </div>
+
+            <div class="subsection">
+                <label>Creatividad en la cocción: <span class="pts">/2 pts</span></label>
+                <input type="number" max="2" min="0" formControlName="CreatividadCoccion"/>
+            </div>
+
+            <div class="subsection">
+                <label>Puntaje Total: <span class="pts">/15 pts</span></label>
+                <input type="number" max="15" min="0" />
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>BONUS (10 pts)
+            </h3>
+
+            <div class="subsection">
+                <label>Por creatividad, liderazgo, eficiencia, higiene o presentación destacada: <span class="pts">/10 pts</span></label>
+                <input type="number" max="10" min="0" />
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>PUNTUACIÓN TOTAL
+            </h3>
+
+            <div class="subsection">
+                <label>PUNTUACIÓN TOTAL: <span class="pts">/100 pts</span></label>
+                <input type="number" max="100" min="0" />
+            </div>
+        </div>
+
+        <div class="subsection">
+            <label>COMENTARIOS: </label>
+            <input type="text" formControlName="comentarios"/>
+        </div>
+
+        <div class="buttons-container">
+            <button class="btn btn-danger" (click)="GoToBack()">Cancelar</button>
+            <button class="btn btn-primary" (click)="SetCompetenciaSupervivencia()">Guardar</button>
+          </div>
+
+    </div>
+
+    
+
+    
+
+        
+  
+  </form>

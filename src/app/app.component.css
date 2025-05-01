@@ -1,0 +1,41 @@
+.main-layout {
+    display: flex;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 4rem; /* Igual al width del sidebar */
+    margin-top: 70px;
+    padding: 1rem; /* opcional, para dar espacio interno */
+
+  }
+
+/* Desde 0px hasta 200px */
+@media (max-width: 200px) {
+  .main-content {
+    margin-left: 0;
+    margin-top: 50px !important;
+    padding: 0rem;
+  }
+}
+
+/* Desde 201px hasta 480px */
+@media (min-width: 201px) and (max-width: 480px) {
+  .main-content {
+    margin-left: 0;
+    margin-top: 60px !important;
+    padding: 0rem;
+  }
+}
+
+/* Desde 481px hasta 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    margin-top: 70px !important;
+    padding: 0rem;
+  }
+}
+  
+  

@@ -1,0 +1,62 @@
+
+<div class="container my-5">
+    <h2 class="mb-4 text-primary text-center">Agregar ganadores</h2>
+    <form class="row g-4 form-master" [formGroup]="AgregarGanadores">
+  
+      <div class="col-md-6">
+        <label for="inputSelect" class="form-label" >Primer lugar</label>
+        <ng-select
+        [items]="destacamentoListCompetencia"
+        bindLabel="nombre"
+        bindValue="nombre"
+        placeholder="Elige..."
+        formControlName="primerLugar"
+        [virtualScroll]="true"
+        [searchable]="true">
+        <ng-template ng-option-tmp let-item="item">
+          {{ item.nombre + " " + item.numero }}
+        </ng-template>
+      </ng-select>
+      </div>
+      
+      <div class="col-md-6">
+        <label for="inputSelect" class="form-label" >Segundo lugar</label>
+        <ng-select
+        [items]="destacamentoListCompetencia"
+        bindLabel="nombre"
+        bindValue="nombre"
+        placeholder="Elige..."
+        formControlName="segundoLugar"
+        [virtualScroll]="true"
+        [searchable]="true">
+        <ng-template ng-option-tmp let-item="item">
+          {{ item.nombre + " " + item.numero }}
+        </ng-template>
+      </ng-select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputSelect" class="form-label" >Tercer lugar</label>
+        <ng-select
+        [items]="destacamentoListCompetencia"
+        bindLabel="nombre"
+        bindValue="nombre"
+        placeholder="Elige..."
+        [virtualScroll]="true"
+        formControlName="tercerLugar"
+        [searchable]="true">
+        <ng-template ng-option-tmp let-item="item">
+          {{ item.nombre + " " + item.numero  }}
+        </ng-template>
+      </ng-select>
+        <!-- <select class="form-select" id="inputSelect" formControlName="hora">
+          <option selected disabled>Elige...</option>
+          <option *ngFor="let item of destacamentoList"  [value]="item.destacamentoId">{{item.nombre + " " + item.numero}}</option>
+
+        </select> -->
+
+      </div>
+
+<div class="col-12 text-center mt-4">
+<button type="submit" class="btn btn-primary px-4" (click)="SetGanadores()">Guardar</button>
+</div>

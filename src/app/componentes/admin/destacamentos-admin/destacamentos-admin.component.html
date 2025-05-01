@@ -1,0 +1,141 @@
+
+<!-- <div class="card">
+  <div class="card-header">
+    Lista de destacamentos
+  </div>
+  <div class="card-body">
+
+    <div class="tabla-scroll">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Destacamento</th>
+            <th scope="col">Numero</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td class="Acciones">
+              <button class="btn-ver" title="Ver"><i class='bx bx-show'></i></button>
+              <button class="btn-editar" title="Editar"><i class='bx bx-edit'></i></button>
+              <button class="btn-eliminar" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div> -->
+
+
+<section class="Container__ClientesPagar">
+  <div class="iconTable"><i class="ri-team-fill"></i> <span>Lista de destacamentos</span></div>
+ <i class="ri-calendar-schedule-line"></i> 
+ <hr>
+
+ <!-- Aqui la tabla #### -->
+ 
+
+  <div class="table-header">
+
+      <div class="buttons-seccion" >
+        <button class="btn btn-success" (click)="opendialogAddCompetencia()" *ngIf="usuarioRol === 'admin'">Agregar nuevo</button>
+      </div>
+
+      <div class="search-box">
+          <label>
+              Buscar:
+              <input type="text" placeholder="Escriba aqui..." [(ngModel)]="search" (ngModelChange)="Buscardor()">
+          </label>
+      </div>
+  </div>
+
+  <table class="custom-table">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Destacamento</th>
+              <th>Numero</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of destacamentoList">
+
+          <tr class="collapsible-row">
+            <td class="always-visible" data-label="Name">
+                <button class="toggle-button">▼</button>
+                {{item.destacamentoId}}
+            </td>
+            <td class="always-visible" data-label="Position">Dest. {{item.nombre}}</td>
+            <td>
+              {{item.numero}}
+            </td>
+            <td class="Acciones">
+                <button class="btn-eliminar" title="Eliminar"  *ngIf="usuarioRol==='admin'"><i class='bx bx-trash'></i></button>
+            </td>
+
+        </tr>
+        <tr class="details-row">
+            <td colspan="5">
+                <div class="detail-item"><span>Numero:</span> {{item.numero}}</div>
+                <div class="detail-item"><span>Acciones:</span>       
+                  <td class="Acciones">
+                  <button class="btn-eliminar" title="Eliminar" *ngIf="usuarioRol === 'admin'"><i class='bx bx-trash'></i></button>
+              </td>
+            </div>
+                
+            </td>
+        </tr>
+
+        </ng-container>
+         
+          
+      </tbody>
+  </table>
+
+  <div class="table-footer">
+    <div>
+      <span>Derechos reservados</span>
+    </div>
+    
+    <div >
+      <label class="select-wrapper">
+          <select [(ngModel)]="limit" (ngModelChange)="limitEntidades()">
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+          </select> 
+          <span>Mostrando pagina {{parameters.page}} de {{pageExisten}}</span>
+          <div>          
+            <i class="bx bxs-left-arrow-circle" (click)="pageDescrement()"></i>
+            <i class="bx bxs-right-arrow-circle" (click)="pageIncrement()"></i>
+          </div>
+
+      </label>  
+    </div>
+
+  </div>
+
+
+ <!-- Aqui la tabla #### -->
+  
+</section>

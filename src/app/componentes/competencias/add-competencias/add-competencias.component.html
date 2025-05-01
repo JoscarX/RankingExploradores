@@ -1,0 +1,64 @@
+<div class="container my-5">
+  <h2 class="mb-4 text-primary text-center">Agregar competencia</h2>
+  <form class="row g-4 form-master" [formGroup]="AgregarCompeticionFG">
+    <div class="col-md-6 col-12">
+      <label for="nombre" class="form-label">Nombre de la competencia</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Escribe algo..." formControlName="nombre">
+    </div>
+
+    <div class="col-md-6 col-12">
+      <label for="encargado" class="form-label">Encargados</label>
+      <input type="text" class="form-control" id="encargado" placeholder="Escribe algo..." formControlName="encargado">
+    </div>
+
+    <div class="col-md-6 col-12">
+      <label for="dia" class="form-label">Día</label>
+      <select class="form-select" id="dia" formControlName="dia">
+        <option selected disabled>Elige...</option>
+        <option>Viernes</option>
+        <option>Sabado</option>
+        <option>Domingo</option>
+      </select>
+    </div>
+
+    <div class="col-md-6 col-12">
+      <label for="hora" class="form-label">Horario</label>
+      <select class="form-select" id="hora" formControlName="hora">
+        <option selected disabled>Elige...</option>
+        <option>Mañana</option>
+        <option>Tarde</option>
+        <option>Noche</option>
+      </select>
+    </div>
+
+    <div class="col-md-6 col-12">
+      <label for="division" class="form-label">División</label>
+      <select class="form-select" id="division" formControlName="division">
+        <option selected disabled>Elige...</option>
+        <option>Pioneros</option>
+        <option>Seguidores</option>
+        <option>Exploradores</option>
+        <option>Mixto</option>
+        <option>Pro</option>
+        <option>Rookie</option>
+        <option>Mixto</option>
+        <option>Lideres</option>
+        <option>General</option>
+      </select>
+    </div>
+    
+    <div class="col-12">
+      <label for="reglas" class="form-label">Reglas</label>
+      <textarea class="form-control" id="reglas" rows="3" placeholder="Escribe tu mensaje..." formControlName="reglas"></textarea>
+    </div>
+
+    <div class="col-12">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea class="form-control" id="descripcion" rows="3" placeholder="Escribe tu mensaje..." formControlName="descripcion"></textarea>
+    </div>
+
+    <div class="col-12 text-center mt-4">
+      <button type="submit" class="btn btn-primary px-4" (click)="Enviar()">Enviar</button>
+    </div>
+  </form>
+</div>

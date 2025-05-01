@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="header">
+      <h1>Tiro con arco </h1>
+    </div>
+    <div class="sub-header">INDIVIDUAL - CLASIFICACIÓN</div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>10’s</th>
+          <th>X’s</th>
+          <th>Pts.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of participantesList">
+          <td>{{item.participanteID}}</td><td>{{item.nombreCompleto}}</td><td>NA</td><td>NA</td><td>{{item.puntosArquero}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>

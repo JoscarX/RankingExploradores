@@ -1,0 +1,75 @@
+.titulo-seccion {
+  background-color: #0059be;
+  color: #ebedf3;
+  font-family: Poppins, Helvetica, sans-serif;
+  padding: 15px;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boton-cerrar {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ebedf3;
+}
+
+.boton-cerrar:hover {
+  color: #ffdddd;
+}
+
+.datos-generales {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.dato {
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+.etiqueta {
+  font-family: Poppins, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #003876;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.valor {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.primer-lugar {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.segundo-lugar {
+  color: #c0c0c0;
+  font-weight: bold;
+}
+
+.tercer-lugar {
+  color: #cd7f32;
+  font-weight: bold;
+}
+
+.Lista-Participantes {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.Lista-Participantes li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}

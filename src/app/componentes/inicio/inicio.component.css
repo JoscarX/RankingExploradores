@@ -1,0 +1,466 @@
+hr{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.info-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 20px;
+    gap: 15px;
+  }
+  
+  .info-principal {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #001f4d;
+    padding: 20px;
+    border: 2px solid #001f4d;
+    border-radius: 10px;
+    max-width: 900px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-medallas {
+    background-color: #b30000;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+
+.tooltip-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  
+  .tooltip-icon .tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Ajuste para que aparezca arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip-icon .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Punta abajo */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+  
+  .tooltip-icon:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.medallero-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.medallero-table th {
+    background-color: var(--azul-oscuro);
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.medallero-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.medallero-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.posicion, .total, .puntos, .medalla-oro, .medalla-plata, .medalla-bronce {
+    text-align: center;
+    font-weight: bold;
+}
+
+.medalla-oro {
+    color: var(--oro);
+}
+.medalla-plata {
+    color: var(--plata);
+}
+.medalla-bronce {
+    color: var(--bronce);
+}
+.total {
+    background-color: #f5f5f5;
+}
+.puntos {
+    color: var(--rojo);
+}
+
+.section-title {
+    background-color: var(--azul-claro);
+    color: white;
+    padding: 10px 15px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.titulo-oro {
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--oro);
+    padding-bottom: 5px;
+}
+.titulo-plata {
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--plata);
+    padding-bottom: 5px;
+}
+.titulo-bronce {
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--bronce);
+    padding-bottom: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    color: #666;
+}
+
+.medal-icon {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+hr {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+
+@media (max-width: 768px) {
+    .medallero-table {
+        font-size: 14px;
+    }
+
+    .medallero-table th,
+    .medallero-table td {
+        padding: 8px 10px;
+    }
+
+    .medal-icon {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+  .info-contenedor {
+    margin: 20px 10px;
+    gap: 10px;
+  }
+
+  .info-principal {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .medallero-table th,
+  .medallero-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+
+  .categorias-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .footer-logo img {
+    width: 60px;
+  }
+
+  .footer-center h2 {
+    font-size: 1rem;
+  }
+
+  .footer-center p,
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .circle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .seccion-competencia h3 {
+    font-size: 1rem;
+  }
+
+  .seccion-competencia p {
+    font-size: 0.9rem;
+  }
+
+  .tooltip-icon .tooltip-text {
+    width: 180px;
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+}
+
+/*Seccion competencias*/
+ /*Seccion competencias*/
+.seccion-competencia {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 15px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  text-align: left;
+}
+
+.video-cuadro {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video-cuadro video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.etiqueta-video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.seccion-competencia h3 {
+  margin-top: 10px;
+  color: #0e4d8b;
+  font-size: 1.2rem;
+}
+
+.seccion-competencia p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+  .video-cuadro {
+    aspect-ratio: 16 / 9;
+  }
+
+  .seccion-competencia {
+    padding: 0 10px;
+  }
+
+  .etiqueta-video {
+    font-size: 0.8rem;
+  }
+}
+
+.img-final {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
+  .Lista-Participantes {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Espacio entre el texto y el botón */
+    flex-wrap: wrap; /* Por si es necesario en pantallas pequeñas */
+  }
+  
+  .header-buttons {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+
+  .circle-btn {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    background-color: #194987;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .circle-btn:hover {
+    background-color: #193687;
+    
+  }
+
+  /*Footer*/
+  .footer {
+    background-color: #001d63;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footer-logo img {
+    width: 80px;
+    height: auto;
+  }
+
+  .footer-center {
+    text-align: center;
+    flex: 1;
+  }
+
+  .footer-center h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .footer-center p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;
+  }
+
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-logo,
+    .footer-links {
+      justify-content: center;
+      margin: 15px 0;
+    }
+
+    .footer-links {
+      text-align: center;
+    }
+}

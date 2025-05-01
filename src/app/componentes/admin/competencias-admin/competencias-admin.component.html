@@ -1,0 +1,122 @@
+<section class="Container__ClientesPagar">
+    <div class="iconTable"><i class="ri-team-fill"></i> <span>Lista de competencias</span></div>
+   <i class="ri-calendar-schedule-line"></i> 
+   <hr>
+  
+   <!-- Aqui la tabla #### -->
+   
+  
+    <div class="table-header">
+  
+        <div class="buttons-seccion" >
+          <button class="btn btn-success" (click)="opendialogAddCompetencia()" *ngIf="usuarioRol === 'admin'">Agregar competencia</button>
+          <button class="btn btn-success" (click)="GoToAddParticipantes()">Agregar competidores</button>
+
+
+        </div>
+  
+        <div class="search-box">
+            <label>
+                Buscar:
+                <input type="text" placeholder="Escriba aqui..." [(ngModel)]="search" (ngModelChange)="Buscardor()"> 
+            </label>
+        </div>
+    </div>
+  
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Competencia</th>
+                <th>Encargados</th>
+                <th>Dia</th>
+                <th>Tanda</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of competenciaList">
+
+                <tr class="collapsible-row">
+                    <td class="always-visible" data-label="Name">
+                        <button class="toggle-button">▼</button>
+                        {{item.nombre + " " +item.division}}
+                    </td>
+                    <td class="always-visible" data-label="Position">{{item.encargados}}</td>
+                    <td>
+                      {{item.dia}}
+                    </td>
+                    <td>
+                        {{item.hora}}
+                    </td>
+                    <td class="Acciones">
+                        <button class="btn-ver" title="Participantes" [routerLink]="['/mostrar-competidores',item.competenciasId]" routerLinkActive="router-link-active" ><i class='bx bx-group'></i></button>
+                        @if (usuarioRol == 'admin' || usuarioRol == 'staff') {
+
+                          <button class="btn-ver" title="Ganadores" (click)="opendialogSetGanadores(item.competenciasId!)"><i class='bx bx-medal'></i></button>
+                        }
+                        <button class="btn-ver" title="Ver" (click)="opendialogVerCompetencia(item.competenciasId!)"><i class='bx bx-show'></i></button>
+                        <button class="btn-editar" title="Editar" (click)="opendialogEditarCompetencia(item.competenciasId!)" *ngIf="usuarioRol === 'admin'"><i class='bx bx-edit'></i></button>
+                        <button class="btn-eliminar" title="Eliminar" (click)="DeleteCompetencia(item.competenciasId!)" *ngIf="usuarioRol === 'admin'"><i class='bx bx-trash'></i></button>
+                    </td>
+      
+                </tr>
+                <tr class="details-row">
+                    <td colspan="5">
+                        <div class="detail-item"><span>Descripcion:</span> {{item.descripcion}}</div>
+                        <div class="detail-item"><span>Reglas:</span> {{item.reglas}}</div>
+                        <div class="detail-item"><span>Dia:</span> {{item.dia}}</div>
+                        <div class="detail-item"><span>Tanda:</span> {{item.reglas}}</div>
+                        <div class="detail-item"><span>Medalla oro:</span> {{item.oro}}</div>
+                        <div class="detail-item"><span>Medalla plata:</span> {{item.plata}}</div>
+                        <div class="detail-item"><span>Medalla bronce:</span> {{item.bronce}}</div>
+                        <div class="detail-item"><span>Acciones:</span>       
+                          <td class="Acciones">
+                            <button class="btn-ver" title="Participantes" [routerLink]="['/mostrar-competidores',item.competenciasId]" routerLinkActive="router-link-active" ><i class='bx bx-group'></i></button>
+                          @if (usuarioRol === 'admin' || usuarioRol === 'staff') {
+
+                            <button class="btn-ver" title="Ganadores" (click)="opendialogSetGanadores(item.competenciasId!)"><i class='bx bx-medal'></i></button>
+                          }
+                          <button class="btn-ver" title="Ver" (click)="opendialogVerCompetencia(item.competenciasId!)"><i class='bx bx-show'></i></button>
+                          <button class="btn-editar" title="Editar" (click)="opendialogEditarCompetencia(item.competenciasId!)" *ngIf="usuarioRol === 'admin'"><i class='bx bx-edit'></i></button>
+                          <button class="btn-eliminar" title="Eliminar" (click)="DeleteCompetencia(item.competenciasId!)" *ngIf="usuarioRol === 'admin'"><i class='bx bx-trash'></i></button>
+                      </td>
+                    </div>
+                        
+                    </td>
+                </tr>
+                
+
+            </ng-container>
+        
+        </tbody>
+    </table>
+  
+    <div class="table-footer">
+        <div>
+          <span>Derechos reservados</span>
+        </div>
+        
+        <div >
+          <label class="select-wrapper">
+              <select [(ngModel)]="limit" (ngModelChange)="limitEntidades()">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+              </select> 
+              <span>Mostrando pagina {{parameters.page}} de {{pageExisten}}</span>
+              <div>          
+                <i class="bx bxs-left-arrow-circle" (click)="pageDescrement()"></i>
+                <i class="bx bxs-right-arrow-circle" (click)="pageIncrement()"></i>
+              </div>
+    
+          </label>  
+        </div>
+    
+      </div>
+  
+  
+   <!-- Aqui la tabla #### -->
+    
+  
+  </section>

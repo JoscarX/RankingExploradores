@@ -1,0 +1,57 @@
+<form [formGroup]="formSetParticipante">
+  
+  <div class="google-form-style">
+      <div class="input-row">
+        <div class="form-group">
+          <label for="nombre">Nombre y apellido</label>
+          <input type="text" id="nombre" placeholder="Jose Mota" formControlName="name">
+        </div>
+  
+        <div class="form-group">
+          <label for="nombre">Seleccione el destacamento</label>
+  
+          <ng-select 
+          formControlName="destacamentoId"
+          class="dropdown-destacamentos"
+          [items]="destacamentoList"
+          bindValue="destacamentoId"
+          [virtualScroll]="true"
+          [searchable]="true"
+          placeholder="Seleccione un destacamento">
+
+          <ng-template ng-option-tmp let-item="item">
+            {{ item.nombre }}  {{ item.numero }}
+          </ng-template>
+
+        </ng-select>
+  
+        </div>
+  
+        <div class="form-group">
+          <label for="nombre">Seleccione la competencia</label>
+  
+          <ng-select 
+          formControlName="competenciaId"
+          class="dropdown-destacamentos"
+          [items]="competenciaList"
+          bindLabel="nombre"
+          bindValue="competenciasId"
+          [virtualScroll]="true"
+          [searchable]="true"
+          placeholder="Seleccione una competencia">
+        </ng-select>
+  
+        </div>
+  
+      </div>
+      
+      <div class="buttons-container">
+        <button class="btn btn-danger" (click)="GoToBack()">Cancelar</button>
+        <button class="btn btn-primary" (click)="SetParticipantes()">Guardar</button>
+      </div>
+
+    </div>
+
+</form>
+
+  

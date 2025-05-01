@@ -1,0 +1,68 @@
+<div class="table-wrapper">
+  <table class="medallero-table">
+
+    <div class="container">
+
+      <header class="competencia-header">
+          <h1>
+            Lista de competencias Campamento Líder Siervo
+           
+          </h1>
+        </header>
+  
+      <table class="medallero-table">
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Competencia</th>
+                  <th><span class="medal-icon">🥇</span> Primer lugar  </th>
+                  <th><span class="medal-icon">🥈</span> Segundo lugar </th>
+                  <th><span class="medal-icon">🥉</span> Tercer lugar  </th>
+                  <th>Acciones</th>
+              </tr>
+          </thead>
+          <tbody id="medallero-body">
+  
+            <tr *ngFor="let item of competenciaList">
+              <td class="posicion">{{item.competenciasId}}</td>
+              <td class="destacamento">{{item.nombre + " " + item.division}}</td>
+              <td class="medalla-oro">{{item.oro}} @if (item.oro == null) {No especificado}</td>
+              <td class="medalla-plata">{{item.plata}} @if (item.plata == null) {No especificado}</td>
+              <td class="medalla-bronce">{{item.bronce}} @if(item.bronce == null){No especificado}</td>
+              <td class="Acciones">
+                  <!-- <button class="btn-ver" title="Ver" (click)="opendialogVerCompetenciArquero(item.competenciasId!)"><i class='bx bx-crosshair'></i></button> -->
+                  <button class="btn-ver" title="Ver" (click)="opendialogVerCompetencia(item.competenciasId!)"><i class='bx bx-show'></i></button>
+                  <button class="btn-ver" title="Participantes" [routerLink]="['/mostrar-competidores',item.competenciasId]" routerLinkActive="router-link-active" ><i class='bx bx-group'></i></button>
+  
+              </td>
+            </tr>
+            
+          </tbody>
+      </table>
+      <footer>
+          <p>Región Central de los Exploradores del Rey &copy; 2025</p>
+          <p> Stalin Peralta - Coordinador de Adiestramiento Región Central</p>
+      </footer>
+  
+  </div>   
+
+  </table>
+</div>
+ 
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="Logo Region Central.png" alt="Logo Región Central">
+  </div>
+
+  <div class="footer-center">
+    <h2>Ranking Campamento Guerrero Siervo 2025</h2>
+    <p>Región Central (RRD)</p>
+    <p>Todos los derechos reservados ©</p>
+  </div>
+
+  <div class="footer-links">
+    <a routerLink="/">Inicio</a>
+    <a routerLink="competencias">Competencia</a>
+    <a (click)="opendialogSesion()">FAQs</a>
+  </div>
+</footer>

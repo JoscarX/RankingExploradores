@@ -1,0 +1,138 @@
+<div class="info-contenedor">
+    <div class="info-principal">
+      ESTE ES EL SITE OFICIAL DEL RANKING DE LAS COMPETENCIAS DEL CAMPAMENTO GUERRERO SIERVO REGIÓN CENTRAL DE LOS EXPLORADORES DEL REY REPÚBLICA DOMINICANA CELEBRADO EN SAN JOSÉ DE LOS LLANOS, EL PUERTO
+    </div>
+    <div class="info-medallas">
+      Valor de cada medalla obtenida: Oro 10 Plata 7 Bronce 4
+      <span class="tooltip-icon">⚠️
+        <span class="tooltip-text">Importante: Estos puntos aplican en general, excepto para la competencia de Campismo.</span>
+      </span>
+    </div>
+  </div>
+
+<hr>
+
+    <div class="container">
+      <header>
+        <h1 class="header-title">
+          Medallero Campamento Exploradores del Rey 
+          
+        </h1>
+        <div class="subtitle">Clasificación automática por medallas y puntos</div>
+      </header>
+      
+
+        <table class="medallero-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Destacamento</th>
+                    <th><span class="medal-icon">🥇</span> Oro</th>
+                    <th><span class="medal-icon">🥈</span> Plata</th>
+                    <th><span class="medal-icon">🥉</span> Bronce</th>
+                    <th>Total</th>
+                    <th>Puntos</th>
+                </tr>
+            </thead>
+            <tbody id="medallero-body" >
+
+              <tr *ngFor="let item of destacamentoList; let i = index">
+                <td class="posicion">{{i+1}}</td>
+                <td class="destacamento">Dest. {{item.nombre}} 
+                <td class="medalla-oro">{{item.oro / 10}}</td>
+                <td class="medalla-plata">{{item.plata /8}}</td>
+                <td class="medalla-bronce">{{item.bronce / 7}}</td>
+                <td class="total">{{(item.oro / 10) + (item.plata / 8) + (item.bronce / 7)}}</td>
+                <td class="puntos">{{item.total}} @if (item.total == null) {0}</td>
+                
+              </tr>
+              
+              
+            </tbody>
+            @if (destacamentoList == null) {
+
+                <h2>No</h2>
+            }
+
+        </table>
+
+        <div class="section-title">Destacamentos por Categorías</div>
+
+        <div class="categorias-grid">
+            <div>
+                <h3 class="titulo-oro">Mejores en Oro</h3>
+                <ol id="top-oro"></ol>
+                <li class="Lista-Participantes">
+                    <ul *ngFor="let item of destacamentoListOro">
+                        {{item.nombre + " " + item.numero + ": " + (item.oro / 10)}}
+                    </ul>
+                </li>
+            </div>
+            <div>
+                <h3 class="titulo-plata">Mejores en Plata</h3>
+                <ol id="top-plata"></ol>
+                <li class="Lista-Participantes">
+                    <ul *ngFor="let item of destacamentoListPlata">
+                        {{item.nombre + " " + item.numero + ": " + (item.plata / 8)}}
+                    </ul>
+                </li>
+            </div>
+            <div>
+                <h3 class="titulo-bronce">Mejores en Bronce</h3>
+                <ol id="top-bronce"></ol>
+                <li class="Lista-Participantes">
+                    <ul *ngFor="let item of destacamentoListBronce">
+                        {{item.nombre + " " + item.numero + ": " + (item.bronce / 7)}}
+                    </ul>
+                </li>
+            </div>
+        </div>
+
+        <footer>
+            <p>Región Central de los Exploradores del Rey &copy; 2025</p>
+            <p>Stalin Peralta - Coordinador de Adiestramiento Región Central</p>
+        </footer>
+    </div>
+    <div class="seccion-competencia">
+      <h2>Competencias</h2>
+    
+      <div class="video-cuadro">
+        <video
+          #videoRef
+          src="Conquista la competencia de marcha militar del Campamento .mp4"
+          type="video/mp4"
+        
+        ></video>
+      </div>
+    
+      <div class="texto-descriptivo">
+        <h3>La competencia de marcha militar en los Exploradores del Rey</h3>
+        <p>
+          Es una actividad diseñada para formar la disciplina, el trabajo en equipo, el liderazgo, la coordinación y la obediencia entre los miembros de un batallón. Esta competencia es una de las más esperadas en los eventos distritales, regionales o nacionales, y suele formar parte de campamentos, adiestramientos o celebraciones especiales dentro del programa.
+        </p>
+    
+        <h3>Objetivo principal</h3>
+        <p>
+          Evaluar la capacidad del equipo para ejecutar maniobras y desplazamientos militares con precisión, orden y sincronización, siguiendo las órdenes del comandante de marcha.
+        </p>
+      </div>
+    </div>
+    <img src="1.jpg" alt="" class="img-final">
+
+    <footer class="footer">
+        <div class="footer-logo">
+          <img src="Logo Region Central.png" alt="Logo Región Central">
+        </div>
+      
+        <div class="footer-center">
+          <h2>Ranking Campamento Guerrero Siervo 2025</h2>
+          <p>Región Central (RRD)</p>
+          <p>Todos los derechos reservados ©</p>
+        </div>
+      
+        <div class="footer-links">
+          <a routerLink="/">Inicio</a>
+          <a routerLink="competencias">Competencia</a>
+          <a (click)="opendialogSesion()">Sesion</a>
+        </div>
+      </footer>

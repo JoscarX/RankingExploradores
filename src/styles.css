@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+:root {
+    --azul-oscuro: #003366;
+    --azul-medio: #0066cc;
+    --azul-claro: #3399ff;
+    --blanco: #ffffff;
+    --rojo: #cc0000;
+    --oro: #ffd700;
+    --plata: #c0c0c0;
+    --bronce: #cd7f32;
+    /* Nav variables de color */
+    --background-color: white;
+    --text-title-color: #053D4E;
+    --Text-color: #32363B;
+    --icon-color: #32363B;
+    --icon-menu-color:#707780;
+    --menu-color: #707780;
+
+    --text-selected-color:#355CC0;
+    --background-selected:#EBF0FF;
+    --background-hover: #F7F9FA;
+
+    --border-color: #E6E9ED;
+    /* Nav variables de color */
+
+    /*Colores Paginas General*/
+    --azul-oscuro-pagina:   #1E3A8A;
+    --azul-medio-pagina:    #3B82F6;
+  
+    --rojo-oscuro-pagina:   #B91C1C;
+    --rojo-medio-pagina:    #EF4444;
+  
+    --blanco-opaco-pagina:  #E5E5E5;
+    --blanco-pagina:        #FFFFFF;
+  
+    --plata-oscura-pagina:  #9CA3AF;
+    --plata-media-pagina:   #D1D5DB;
+    /*Colores Paginas General*/
+
+    --dark-bg: #0f0e0e;
+    --red: #db1d1d;
+    --white: #ffffff;
+    --text-light: #d4d2cb;
+    --highlight: #ede7d6;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+::ng-deep .mat-dialog-container {
+    border-radius: 0 !important;
+  }
+
+html, body { height: 100%; }
+

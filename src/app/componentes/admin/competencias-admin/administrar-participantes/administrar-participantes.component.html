@@ -1,0 +1,110 @@
+<section class="Container__ClientesPagar">
+    <div class="iconTable"><i class="ri-team-fill"></i> <span>Lista de participantes: <b>{{competenciaName}}</b> </span></div>
+   <i class="ri-calendar-schedule-line"></i> 
+   <hr>
+  
+   <!-- Aqui la tabla #### -->
+   
+  
+    <div class="table-header">
+  
+
+    <div class="buttons-seccion" >
+          <button class="btn btn-warning" (click)="GoToBack()" *ngIf="usuarioRol === 'admin' || usuarioRol === 'staff'">Regresar admin</button>
+          <button class="btn btn-warning" (click)="GoToBackUsuario()" >Regresar atras</button>
+          @if (usuarioRol === 'admin' || usuarioRol === 'staff') {
+              <button class="btn btn-success" (click)="SumarPuntosMaximaResistencia(idPasofirme)" *ngIf="IsPasoFirme">Asignar puntos</button>
+            }
+            <button class="btn btn-success" (click)="GoToVerArqueroPuntos()" *ngIf="IsTiroArco">Ver puntuaciones</button>
+        </div>
+  
+        <div class="search-box">
+            <label>
+                Buscar:
+                <input type="text" placeholder="Escriba aqui..." [(ngModel)]="search" (ngModelChange)="Buscardor()"> 
+            </label>
+        </div>
+    </div>
+  
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>participante</th>
+                <th>Destacamento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of participanteList">
+
+                <tr class="collapsible-row">
+                    <td class="always-visible" data-label="Name">
+                        <button class="toggle-button">▼</button>
+                        {{item.nombre}}
+                    </td>
+                    <td class="always-visible" data-label="Position">{{item.destacamento + " " + item.numero}}</td>
+
+                    <td class="Acciones">
+                        @if (usuarioRol === 'admin' || usuarioRol === 'staff') {
+                            <button class="btn-editar" title="Formulario" *ngIf="IsSupervivencia" [routerLink]="['/competencia-supervivencia',item.participanteId]"  ><i class='bx bx-knife'></i></button>
+                        }
+                        <button class="btn-ver" title="Ver" (click)="opendialogSetPuntaje(item.participanteId)" *ngIf="IsTiroArco"><i class='bx bx-show'></i></button>
+                        <button class="btn-editar" title="Formulario" *ngIf="IsSupervivencia" [routerLink]="['/competencia-supervivencia-ver',item.participanteId]"  ><i class='bx bx-show'></i></button>
+                        <button class="btn-editar" title="Formulario" *ngIf="IsTiroArco"  ><i class='bx bx-crosshair'></i></button>
+                        <button class="btn-eliminar" title="Eliminar" (click)="DeleteParticipante(item.destacamentoId,item.participanteId)" *ngIf="usuarioRol === 'admin'"><i class='bx bx-trash'></i></button>
+                    </td>
+      
+                </tr>
+                <tr class="details-row">
+                    <td colspan="5">
+
+                        <div class="detail-item"><span>Acciones:</span>       
+                          <td class="Acciones">
+                            @if (usuarioRol === 'admin' || usuarioRol === 'staff') {
+                                <button class="btn-editar" title="Formulario" *ngIf="IsSupervivencia" [routerLink]="['/competencia-supervivencia',item.participanteId]"  ><i class='bx bx-medal'></i></button>
+                            }
+                            <button class="btn-ver" title="Ver" *ngIf="IsTiroArco"><i class='bx bx-show'></i></button>
+                            <button class="btn-editar" title="Formulario" *ngIf="IsTiroArco" (click)="opendialogSetPuntaje(item.participanteId)" ><i class='bx bx-crosshair'></i></button>
+                            <button class="btn-editar" title="Formulario" *ngIf="IsSupervivencia" [routerLink]="['/competencia-supervivencia-ver',item.participanteId]"  ><i class='bx bx-show'></i></button>
+                          <button class="btn-eliminar" title="Eliminar" (click)="DeleteParticipante(item.destacamentoId,item.participanteId)" *ngIf="usuarioRol === 'admin'"><i class='bx bx-trash'></i></button>
+                      </td>
+                    </div>
+                        
+                    </td>
+                </tr>
+                
+
+            </ng-container>
+        
+        </tbody>
+    </table>
+  
+    <div class="table-footer">
+        <div>
+          <span>Derechos reservados</span>
+        </div>
+        
+        <div >
+          <label class="select-wrapper">
+              <select [(ngModel)]="limit" (ngModelChange)="limitEntidades()">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+              </select> 
+              <span>Mostrando pagina {{parameters.page}} de {{pageExisten}}</span>
+              <div>          
+                <i class="bx bxs-left-arrow-circle" (click)="pageDescrement()"></i>
+                <i class="bx bxs-right-arrow-circle" (click)="pageIncrement()"></i>
+              </div>
+    
+          </label>  
+        </div>
+    
+      </div>
+  
+  
+   <!-- Aqui la tabla #### -->
+    
+  
+  </section>

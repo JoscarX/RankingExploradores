@@ -1,0 +1,10 @@
+<section class="form-login">
+    <h5>Crear cuenta</h5>
+    <form [formGroup]="formSesionUsuario">
+    <input class="controls" type="text" name="user" value="" placeholder="Correo" formControlName="email">
+    <input class="controls" type="password" name="password" value="" placeholder="Contraseña" formControlName="clave">
+    
+   <a (click)="GetDatosUsuario()"><input class="buttons" type="submit" name="" value="Ingresar"></a> 
+    <p><a (click)="closeModal()">¿Ingresar como invitado?</a></p>
+</form>
+</section>

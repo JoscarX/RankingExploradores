@@ -1,0 +1,102 @@
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: var(--dark-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  padding: 1rem 1.5rem;
+}
+
+.header {
+  background-color: var(--dark-bg);
+  padding: 1.2rem 0;
+  text-align: center;
+  border-bottom: 3px solid #241010;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--highlight);
+  letter-spacing: 1px;
+}
+
+.sub-header {
+  background-color: #2e1a1a;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  letter-spacing: 1px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  color: #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  text-align: right;
+}
+
+thead th {
+  padding: 0.75rem 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+tbody td {
+  padding: 0.75rem 0.5rem;
+  font-size: 0.95rem;
+  text-align: right;
+  vertical-align: middle;
+}
+
+tbody td:first-child {
+  background-color: var(--red);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px 0 0 4px;
+}
+
+tbody td:nth-child(2) {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  thead th,
+  tbody td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .sub-header {
+    font-size: 0.7rem;
+  }
+}

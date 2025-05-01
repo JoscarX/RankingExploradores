@@ -1,0 +1,88 @@
+<div class="container">
+    <h1>Hoja de Evaluación - Competencia "Guerrero Sobreviviente"</h1>
+  
+    <div class="section">
+      <label>Nombres:</label>
+      <input type="text" [value]="participanteInfo.nombreCompleto" readonly />
+      <label>Evaluador:</label>
+      <input type="text" />
+    </div>
+  
+    <div class="section">
+      <h3>1. Purificación de Agua</h3>
+      <label>Filtrado: </label>
+      <input type="number" [value]="SupervivenciaInfo.filtrado" readonly />
+      <label>Purificación: </label>
+      <input type="number" [value]="SupervivenciaInfo.purificacion" readonly />
+      <label>Trabajo en equipo: </label>
+      <input type="number" [value]="SupervivenciaInfo.trabajoEquipo" readonly />
+      <label>Puntaje Total:</label>
+      <input type="number" [value]="totalPurificacion" readonly />
+    </div>
+  
+    <div class="section">
+      <h3>2. Construcción de Refugio</h3>
+      <label>Estructura:</label>
+      <input type="number" [value]="SupervivenciaInfo.estructuraRefugio" readonly />
+      <label>Protección:</label>
+      <input type="number" [value]="SupervivenciaInfo.proteccionElementos" readonly />
+      <label>Seguridad:</label>
+      <input type="number" [value]="SupervivenciaInfo.seguridadEfectividad" readonly />
+      <label>Puntaje Total:</label>
+      <input type="number" [value]="totalRefugio" readonly />
+    </div>
+  
+    <div class="section">
+      <h3>3. Orientación Solar</h3>
+      <label>Ejecución:</label>
+      <input type="number" [value]="SupervivenciaInfo.ejecucionMetodo" readonly />
+      <label>Orientación precisa:</label>
+      <input type="number" [value]="SupervivenciaInfo.orientacionPrecisa" readonly />
+      <label>Variación:</label>
+      <input type="number" [value]="SupervivenciaInfo.explicacionVariacion" readonly />
+      <label>Puntaje Total:</label>
+      <input type="number" [value]="totalOrientacion" readonly />
+    </div>
+  
+    <div class="section">
+      <h3>4. Fogata</h3>
+      <label>Encender fuego:</label>
+      <input type="number" [value]="SupervivenciaInfo.encenderFuego" readonly />
+      <label>Mantenerlo:</label>
+      <input type="number" [value]="SupervivenciaInfo.mantenerlo" readonly />
+      <label>Seguridad:</label>
+      <input type="number" [value]="SupervivenciaInfo.seguridadFuego" readonly />
+      <label>Puntaje Total:</label>
+      <input type="number" [value]="totalFogata" readonly />
+    </div>
+  
+    <div class="section">
+      <h3>5. Cocción</h3>
+      <label>Seguridad e higiene:</label>
+      <input type="number" [value]="SupervivenciaInfo.seguridadHigiene" readonly />
+      <label>Comida cocida:</label>
+      <input type="number" [value]="SupervivenciaInfo.comidaCocida" readonly />
+      <label>Creatividad:</label>
+      <input type="number" [value]="SupervivenciaInfo.creatividadCoccion" readonly />
+      <label>Puntaje Total:</label>
+      <input type="number" [value]="totalCoccion" readonly />
+    </div>
+  
+    <div class="section">
+      <h3>BONUS</h3>
+      <label>Bonus:</label>
+      <input type="number" [value]="SupervivenciaInfo.bonus" readonly />
+    </div>
+  
+    <div class="section">
+      <h3>PUNTUACIÓN TOTAL</h3>
+      <label>Total:</label>
+      <input type="number" [value]="puntajeFinal" readonly />
+    </div>
+  
+    <div class="section">
+      <label>Comentarios:</label>
+      <input type="text" [value]="SupervivenciaInfo.comentarios" readonly />
+    </div>
+  </div>
+  

@@ -1,0 +1,21 @@
+<form [formGroup]="formSetPuntajeArquero" class="modal-form">
+    <div class="modal-container">
+      <h1 class="modal-title">Hoja de puntuacion - Competencia "Tiro con Arco"</h1>
+  
+      <div class="modal-section">
+        <label>Nombres:</label>
+        <input type="text" formControlName="nombreCompleto" />
+  
+        <div class="modal-subsection">
+          <label>Total de puntos: <span class="pts"></span></label>
+          <input type="number" min="0" formControlName="puntos" />
+        </div>
+      </div>
+  
+      <div class="modal-buttons">
+        <button class="btn btn-danger" (click)="CloseModal()">Cancelar</button>
+        <button class="btn btn-primary" (click)="SetPuntosArquero()">Guardar</button>
+      </div>
+    </div>
+  </form>
+

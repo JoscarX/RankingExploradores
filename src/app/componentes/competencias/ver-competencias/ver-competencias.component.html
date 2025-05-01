@@ -1,0 +1,49 @@
+<section class="competencias">
+    <h2 class="titulo-seccion">
+        Datos Generales de la Competencia
+        <i class='bx bx-x' style="cursor: pointer; float: right;" (click)="closeDialog()"></i>
+      </h2>
+    <div class="datos-generales">
+      <div class="dato">
+        <p class="etiqueta">Nombre</p>
+        <span class="valor">{{competencia.nombre}}</span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Descripción</p>
+        <span class="valor">{{competencia.descripcion}}</span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Reglas</p>
+        <span class="valor">{{competencia.reglas}} </span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Encargados</p>
+        <span class="valor">{{competencia.encargado}}</span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Primer Lugar</p>
+        <span class="valor primer-lugar">{{competencia.oro}} @if (usuarioRol === "admin") {<i class='bx bx-trash'></i>}  </span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Segundo Lugar</p>
+        <span class="valor segundo-lugar">{{competencia.plata}} @if (usuarioRol === "admin") {<i class='bx bx-trash'></i>}</span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Tercer Lugar</p>
+        <span class="valor tercer-lugar">{{competencia.bronce}} @if (usuarioRol === "admin") {<i class='bx bx-trash'></i>}</span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Dia</p>
+        <span class="valor">{{competencia.dia}}</span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Hora</p>
+        <span class="valor">{{competencia.hora}}</span>
+      </div>
+      <div class="dato">
+        <p class="etiqueta">Division</p>
+        <span class="valor">{{competencia.division}}</span>
+      </div>
+
+    </div>
+  </section>
