@@ -14,10 +14,15 @@
           formControlName="destacamentoId"
           class="dropdown-destacamentos"
           [items]="destacamentoList"
+          bindLabel="nombre"
           bindValue="destacamentoId"
           [virtualScroll]="true"
           [searchable]="true"
           placeholder="Seleccione un destacamento">
+
+          <ng-template ng-label-tmp let-item="item">
+            {{ item.nombre }}  {{ item.numero }}
+          </ng-template>
 
           <ng-template ng-option-tmp let-item="item">
             {{ item.nombre }}  {{ item.numero }}
